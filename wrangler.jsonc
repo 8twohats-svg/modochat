@@ -1,0 +1,33 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "modochat",
+  "compatibility_date": "2025-01-01",
+  "compatibility_flags": ["nodejs_compat"],
+  "pages_build_output_dir": "./dist",
+
+  // KV namespace — 레이트 리밋 카운터
+  // 생성 후 wrangler kv namespace create RATE_LIMIT_KV → id 받아서 아래에 박기
+  "kv_namespaces": [
+    {
+      "binding": "RATE_LIMIT_KV",
+      "id": "REPLACE_WITH_KV_NAMESPACE_ID"
+    }
+  ],
+
+  // Vectorize index — 시맨틱 캐시
+  // 생성: wrangler vectorize create modochat-cache --dimensions=1024 --metric=cosine
+  "vectorize": [
+    {
+      "binding": "CACHE_INDEX",
+      "index_name": "modochat-cache"
+    }
+  ],
+
+  // Workers AI — bge-m3 임베딩
+  "ai": {
+    "binding": "AI"
+  }
+
+  // GEMINI_API_KEY 는 Cloudflare Pages 대시보드 → Settings → Environment Variables 에 Secret 으로 등록
+  // (wrangler.jsonc 에 평문으로 박지 않음)
+}

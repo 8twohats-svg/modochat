@@ -226,7 +226,10 @@ async function callGemini(env: Env, mode: Mode, message: string): Promise<{ ok: 
     ],
     generationConfig: {
       temperature: 0.85,
-      maxOutputTokens: 256,
+      maxOutputTokens: 512,
+      thinkingConfig: {
+        thinkingBudget: 0,
+      },
     },
   };
 

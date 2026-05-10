@@ -29,8 +29,8 @@
 
     <title>모도챗 — 모(칭찬) 아니면 도(디스)</title>
 
-    <!-- Google Tag Manager (자리 잡아두기 — GTM ID 발급 후 교체) -->
-    <!-- <script>
+    <!-- Google Tag Manager -->
+    <script>
       (function (w, d, s, l, i) {
         w[l] = w[l] || [];
         w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
@@ -40,9 +40,19 @@
         j.async = true;
         j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
         f.parentNode.insertBefore(j, f);
-      })(window, document, "script", "dataLayer", "GTM-XXXXXXX");
-    </script> -->
+      })(window, document, "script", "dataLayer", "GTM-MTJL4TPS");
+    </script>
     <!-- End Google Tag Manager -->
+
+    <!-- Google Analytics (GA4) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-5DWKHDNRVN"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-5DWKHDNRVN');
+    </script>
+    <!-- End Google Analytics -->
 
     <!-- Google AdSense (한집·책점과 동일 publisher) -->
     <script
@@ -53,15 +63,16 @@
     <!-- End Google AdSense -->
   </head>
   <body>
-    <!-- Google Tag Manager (noscript) — GTM ID 발급 후 활성화 -->
-    <!-- <noscript>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript>
       <iframe
-        src="https://www.googletagmanager.com/ns.html?id=GTM-XXXXXXX"
+        src="https://www.googletagmanager.com/ns.html?id=GTM-MTJL4TPS"
         height="0"
         width="0"
         style="display: none; visibility: hidden"
       ></iframe>
-    </noscript> -->
+    </noscript>
+    <!-- End Google Tag Manager (noscript) -->
 
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
